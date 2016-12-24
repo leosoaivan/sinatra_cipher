@@ -6,8 +6,8 @@ get '/' do
 end
 
 post '/' do
-  translation = cipher(params[:message], params[:key].to_i)
-  erb :index, :locals => { :translation => translation }
+  @translation = cipher(params[:message], params[:key].to_i)
+  erb :index, :locals => { :translation => @translation }
 end
 
 def cipher(str, key)
