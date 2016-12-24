@@ -23,8 +23,8 @@
       <br>
       <p id="quoter">Caesar Cipher, Wikipedia</p>
     </div>
-    <div id="form" method="post" action="/">
-      <form>
+    <div id="form">
+      <form method="POST" action="/">
         Message:
         <br>
         <textarea id="textarea" name="message" placeholder="Enter your message."></textarea>
@@ -36,9 +36,10 @@
         <input id="button" type="submit" value="Cipher"/>
       </form>
     </div>
-    <div>
-      <h2>Your message:</h2>
-        <%= @translation %>
+    <div id="translation">
+      <p id="cipher">
+        <%= translation %>
+      </p>
     </div>
   </body>
 </html>
