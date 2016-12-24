@@ -34,13 +34,17 @@
         <input type="number" name="key" value="5" size="5"/>
         <br><br>
         <input id="button" type="submit" value="Cipher"/>
-        <input id="button" type="reset" value="Clear"/>
+      </form>
+      <form method="POST" action="/clear">
+        <input id="button" type="submit" value="Clear All"/>
       </form>
     </div>
+    <% if @translation %>
     <div id="translation">
       <p id="cipher">
         <%= @translation %>
       </p>
     </div>
+    <% end %>
   </body>
 </html>

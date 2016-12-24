@@ -10,6 +10,11 @@ post '/' do
   erb :index, :locals => { :translation => @translation }
 end
 
+post '/clear' do
+  @translation = nil
+  erb :index, :locals => { :translation => @translation }
+end
+
 def cipher(str, key)
   key %= 26
 
