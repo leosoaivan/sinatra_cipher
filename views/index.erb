@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i" rel="stylesheet">
+    <title>Caesar Cipher</title>
+  </head>
+  <body>
+    <div id="title">
+      <p>Caesar Cipher</p>
+    </div>
+    <div id="description">
+      <p id="quote">
+        "In cryptography, a Caesar cipher, also known as Caesar's cipher, the
+        shift cipher, Caesar's code or Caesar shift, is one of the simplest and
+        most widely known encryption techniques. It is a type of substitution
+        cipher in which each <span class="emphasis">letter</span> in the
+        plaintext is replaced by a letter some
+        <span class="emphasis">fixed number</span> of positions down the alphabet."
+      </p>
+      <br>
+      <p id="quoter">Caesar Cipher, Wikipedia</p>
+    </div>
+    <div id="form" method="post" action="/">
+      <form>
+        Message:
+        <br>
+        <textarea id="textarea" name="message" placeholder="Enter your message."></textarea>
+        <br><br>
+        Key:
+        <br>
+        <input type="number" name="key" value="5" size="5"/>
+        <br><br>
+        <input id="button" type="submit" value="Cipher"/>
+      </form>
+    </div>
+    <div>
+      <h2>Your message:</h2>
+        <%= @translation %>
+    </div>
+  </body>
+</html>
