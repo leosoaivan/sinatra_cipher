@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
+ruby '~> 2.3.0'
 
-ruby '2.2.4'
+gem 'sinatra'
