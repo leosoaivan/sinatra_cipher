@@ -57,11 +57,10 @@ body {
 
 #translation {
   width: 50%;
-  height: 100px;
   margin: 40px auto auto auto;
   padding: 15px;
   background-color: #bac6d8;
-  text-align: justify;
+  text-align: center;
 }
 
 #cipher {
