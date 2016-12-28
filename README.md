@@ -1,8 +1,10 @@
-# ${1:Project Name}
-TODO: Write a project description
+# Sinatra Caesar Cipher
+A Ruby implementation of a Caesar Cipher, one of the simplest and most widely known encryption techniques. Read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher).
+
+This was developed as a web-app using Sinatra.
 
 ## Installation
-TODO: Describe the installation process
+1. None needed. Check it out [here](https://morning-mesa-70245.herokuapp.com/)!
 
 ## Usage
 TODO: Write usage instructions
