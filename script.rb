@@ -1,5 +1,6 @@
+require './cipher.rb'
 require 'sinatra'
-require 'sinatra/reloader' if development?
+# require 'sinatra/reloader' if development?
 
 get '/' do
   erb :index
@@ -13,7 +14,4 @@ end
 post '/clear' do
   @translation = nil
   erb :index, :locals => { :translation => @translation }
-end
-
-class Cipher
 end

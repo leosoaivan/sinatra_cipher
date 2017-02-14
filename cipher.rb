@@ -12,14 +12,6 @@ class Cipher
   
 private
 
-  def shift
-    key % 26
-  end
-
-  def split_string
-    str.split(//)
-  end
-
   def iterate
     split_string.map! do |char|
       if /[a-zA-Z]/.match(char)
@@ -30,8 +22,16 @@ private
     end
   end
 
+  def split_string
+    self.str.split(//)
+  end
+
   def ending_int(char)
     (char.ord + shift - starting_int(char)) % 26 + starting_int(char)
+  end
+
+  def shift
+    self.key % 26
   end
   
   def starting_int(char)
