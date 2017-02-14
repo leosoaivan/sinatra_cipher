@@ -1,0 +1,18 @@
+
+[1mFrom:[0m /home/leosoaivan/Sites/TOP/4_ror/sinatra_cipher/cipher.rb @ line 12 Cipher#translate:
+
+    [1;34m11[0m: [32mdef[0m [1;34mtranslate[0m
+ => [1;34m12[0m:   binding.pry
+    [1;34m13[0m:   key = key % [1;34m26[0m
+    [1;34m14[0m: 
+    [1;34m15[0m:   [1;34m# ary = str.split(//).map! do |char|[0m
+    [1;34m16[0m:   [1;34m#   if /[^a-zA-Z]/.match(char)[0m
+    [1;34m17[0m:   [1;34m#     char[0m
+    [1;34m18[0m:   [1;34m#   else[0m
+    [1;34m19[0m:   [1;34m#     beginning = (/[a-z]/.match(char) ? "a" : "A" )[0m
+    [1;34m20[0m:   [1;34m#     ((char.ord + key - beginning.ord) % 26 + beginning.ord).chr[0m
+    [1;34m21[0m:   [1;34m#   end[0m
+    [1;34m22[0m:   [1;34m# end[0m
+    [1;34m23[0m:   [1;34m# ary.join[0m
+    [1;34m24[0m: [32mend[0m
+
