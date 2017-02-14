@@ -1,30 +1,41 @@
-require 'sinatra'
-require 'sinatra/reloader' if development?
+class Cipher
+  attr_reader :str, :key
 
-get '/' do
-  erb :index
-end
+  def initialize(args)
+    @str = args[:str]
+    @key = args[:key]
+  end
+  
+  def translate_all
+    iterate.join
+  end
+  
+private
 
-post '/' do
-  @translation = cipher(params[:message], params[:key].to_i)
-  erb :index, :locals => { :translation => @translation }
-end
+  def shift
+    key % 26
+  end
 
-post '/clear' do
-  @translation = nil
-  erb :index, :locals => { :translation => @translation }
-end
+  def split_string
+    str.split(//)
+  end
 
-def cipher(str, key)
-  key %= 26
-
-  ary = str.split(//).map! do |char|
-    if /[^a-zA-Z]/.match(char)
-      char
-    else
-      beginning = (/[a-z]/.match(char) ? "a" : "A" )
-      ((char.ord + key - beginning.ord) % 26 + beginning.ord).chr
+  def iterate
+    split_string.map! do |char|
+      if /[a-zA-Z]/.match(char)
+        ending_int(char).chr
+      else
+        char
+      end
     end
   end
-  ary.join
+
+  def ending_int(char)
+    (char.ord + shift - starting_int(char)) % 26 + starting_int(char)
+  end
+  
+  def starting_int(char)
+    /[a-z]/.match(char) ? "a".ord : "A".ord
+  end
+  
 end
