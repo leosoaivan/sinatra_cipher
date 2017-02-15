@@ -1,9 +1,9 @@
 class Cipher
-  attr_reader :str, :key
+  attr_reader :message, :key
 
-  def initialize(args)
-    @str = args[:str]
-    @key = args[:key]
+  def initialize(params)
+    @message = params[:message]
+    @key = params[:key]
   end
   
   def translate_all
@@ -15,7 +15,7 @@ private
   def iterate
     split_string.map! do |char|
       if /[a-zA-Z]/.match(char)
-        ending_int(char).chr
+        shifted_int(char).chr
       else
         char
       end
@@ -23,10 +23,10 @@ private
   end
 
   def split_string
-    self.str.split(//)
+    self.message.split(//)
   end
 
-  def ending_int(char)
+  def shifted_int(char)
     (char.ord + shift - starting_int(char)) % 26 + starting_int(char)
   end
 
