@@ -31,7 +31,7 @@ private
   end
 
   def shift
-    self.key % 26
+    self.key.to_i % 26
   end
   
   def starting_int(char)

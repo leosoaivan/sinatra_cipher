@@ -18,5 +18,5 @@ end
 private
 
 def transfer_params(params)
-  {:message => params[:message], :key => params[:key].to_i}
+  {message: params[:message], key: params[:key].to_i}
 end
