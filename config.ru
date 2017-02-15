@@ -1,2 +1,3 @@
-require './cipher'
+require './script'
+
 run Sinatra::Application
